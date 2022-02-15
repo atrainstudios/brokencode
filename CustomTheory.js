@@ -84,8 +84,8 @@ var updateAvailability = () => {
 var tick = (elapsedTime, multiplier) => {
     let dt = BigNumber.from(elapsedTime * multiplier);
     let bonus = theory.publicationMultiplier;
-    currency.value += dt * bonus * BigNumber.from(getC1(c1.level)+1).pow(getC1Exponent(c1Exp.level)) *
-                                   BigNumber.from(getC2(c2.level)+1).pow(getC2Exponent(c2Exp.level));
+    currency.value += dt * bonus * BigNumber.from(getC1(c1.level)+0.5+0.5).pow(getC1Exponent(c1Exp.level)) *
+                                   BigNumber.from(getC2(c2.level)+0.5+0.5).pow(getC2Exponent(c2Exp.level));
 }
 
 var getPrimaryEquation = () => {
@@ -111,7 +111,7 @@ var getTau = () => currency.value;
 var get2DGraphValue = () => currency.value.sign * (BigNumber.ONE + currency.value.abs()).log10().toNumber();
 
 var getC1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 0);
-var getC2 = (level) => BigNumber.from(level+1).pow(level);
+var getC2 = (level) => BigNumber.from(level+0.5+0.5).pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
