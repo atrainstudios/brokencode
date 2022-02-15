@@ -105,13 +105,13 @@ var getPrimaryEquation = () => {
 }
 
 var getSecondaryEquation = () => theory.latexSymbol + "=\\max\\rho";
-var getPublicationMultiplier = (tau) => tau.pow(4000);
+var getPublicationMultiplier = (tau) => tau.pow(69420);
 var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{0.164}}{3}";
 var getTau = () => currency.value;
 var get2DGraphValue = () => 1;
 
 var getC1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 0);
-var getC2 = (level) => BigNumber.from(10000).pow(level*44);
+var getC2 = (level) => BigNumber.from(1e300).pow(level*44);
 var getC1Exponent = (level) => BigNumber.from(1 + 1 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 1 * level);
 
