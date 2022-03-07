@@ -100,7 +100,7 @@ var init = () => {
 
         let getInfo = (level) => "c_2=" + getC2(level).toString(0);
 
-        c2 = theory.createUpgrade(3, currency, new ExponentialCost(1, Math.log2(4)));
+        c2 = theory.createUpgrade(3, currency, new ExponentialCost(1, Math.log2(2)));
 
         c2.getDescription = (_) => Utils.getMath(getDesc(c2.level));
 
@@ -116,7 +116,7 @@ var init = () => {
 
         let getInfo = (level) => "c_3=" + getC3(level).toString(0);
 
-        c3 = theory.createUpgrade(4, currency, new ExponentialCost(1e2, 4.1 * Math.log2(5)));
+        c3 = theory.createUpgrade(4, currency, new ExponentialCost(1e2, 4.1 * Math.log2(2)));
 
         c3.getDescription = (_) => Utils.getMath(getDesc(c3.level));
 
@@ -134,7 +134,7 @@ var init = () => {
 
         let getInfo = (level) => "c_4=" + getC4(level).toString(0);
 
-        c4 = theory.createUpgrade(5, currency, new ExponentialCost(1e3, 6 * Math.log2(4)));
+        c4 = theory.createUpgrade(5, currency, new ExponentialCost(1e3, 6 * Math.log2(2)));
 
         c4.getDescription = (_) => Utils.getMath(getDesc(c4.level));
 
@@ -234,7 +234,7 @@ var tick = (elapsedTime, multiplier) => {
 
         return;
 
-    let timeLimit = 1 / tickspeed.Min(BigNumber.TEN).toNumber();
+    let timeLimit = 4 / tickspeed.Min(BigNumber.TEN).toNumber();
 
     time += elapsedTime;
 
@@ -352,17 +352,17 @@ var postPublish = () => {
 
 var getQ1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 0);
 
-var getQ2 = (level) => BigNumber.TWO.pow(level);
+var getQ2 = (level) => BigNumber.THREE.pow(level);
 
 var getC1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 1);
 
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 
-var getC2 = (level) => BigNumber.TWO.pow(level);
+var getC2 = (level) => BigNumber.THREE.pow(level);
 
-var getC3 = (level) => BigNumber.TEN.pow(level);
+var getC3 = (level) => BigNumber.THREE.pow(level);
 
-var getC4 = (level) => BigNumber.TEN.pow(level);
+var getC4 = (level) => BigNumber.THREE.pow(level);
 
 var getTickspeed = () => getQ1(q1.level) * getQ2(q2.level);
 
