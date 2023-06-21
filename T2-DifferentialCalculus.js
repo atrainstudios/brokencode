@@ -228,8 +228,8 @@ var getQuaternaryEntries = () => {
     return quaternaryEntries;
 }
 
-var getPublicationMultiplier = (tau) => tau.pow(0.248) / BigNumber.HUNDRED;
-var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{0.248}}{100}";
+var getPublicationMultiplier = (tau) => tau.pow(0.248);
+var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{0.248}}{1}";
 var getTau = () => currency.value;
 var get2DGraphValue = () => currency.value.sign * (BigNumber.TWO + currency.value.abs()).log10().toNumber();
 
