@@ -4,8 +4,8 @@ import { BigNumber } from "./api/BigNumber";
 import { theory } from "./api/Theory";
 import { Utils } from "./api/Utils";
 
-var id = "zzzzzzzzzzzzzzzzzzzz";
-var name = "Total number of CTs you have";
+var id = "playspouthax";
+var name = "zzzzzzzzzzzzzzzzzzzzzzzzz";
 var description = "You can look at the theory number you have here and subtract 9 for the number of CTs you have. Everything else is just the sample CT";
 var authors = "Gilles-Philippe Paillé";
 var version = 69;
